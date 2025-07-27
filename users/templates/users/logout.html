@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Logged Out</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #f2f4f3, #f2f6f5);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logout-container {
+            background-color: #fff;
+            padding: 50px 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h2 {
+            margin-bottom: 25px;
+            font-size: 26px;
+            color: #2d3436;
+        }
+
+        a {
+            display: inline-block;
+            margin: 10px 8px;
+            padding: 12px 24px;
+            border-radius: 6px;
+            background-color:#45a049 ;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        a:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="logout-container">
+        <h2>You have been logged out.</h2>
+        <a href="{% url 'login' %}">Login Again</a>
+        <a href="{% url 'food:index' %}">Go to Home</a>
+    </div>
+</body>
+</html>

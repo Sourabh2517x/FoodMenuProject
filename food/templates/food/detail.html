@@ -1,0 +1,43 @@
+{% extends "food/base.html" %}
+
+{% block body %}
+<div class="container my-5 mx-5">
+   <div class="row g-4 justify-content-center align-items-center">
+      <!-- Item Image -->
+      <div class="col-md-6">
+         <div class="text-center">
+            <img 
+               class="img-fluid rounded shadow-lg fixed-size-image" 
+               src="{{ Item.item_image }}" 
+               alt="Item Image"
+            >
+         </div>
+      </div>
+      <!-- Item Details -->
+      <div class="col-md-6">
+         <div class="card border-0 shadow-lg p-4">
+            <h3 class="mb-3 text-primary">{{ Item.item_name }}</h3>
+            <p class="mb-2 text-secondary">{{ Item.item_desc }}</p>
+            <h5 class="text-success">₹{{ Item.item_price }}</h5>
+            <div class="mt-4 d-flex gap-3">
+               <a href="{% url 'food:update_item' item_id=Item.id %}" class="btn btn-outline-primary">
+                  Edit Item
+               </a>
+               <a href="{% url 'food:delete_item' item_id=Item.id %}" class="btn btn-outline-danger">
+                  Delete Item
+               </a>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+<!-- Add custom CSS -->
+<style>
+   .fixed-size-image {
+      width: 450px;
+      height: 350px;
+      object-fit: cover;
+   }
+</style>
+{% endblock %}
